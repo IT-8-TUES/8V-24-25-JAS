@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Musician</title>
+  <link rel="stylesheet" href="add.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add a Musician</h1>
+    <form>
+      <label for="name">Musician Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+
+      <label for="style">Music Style:</label>
+      <select id="style" name="style" required>
+        <option value="">Select a style</option>
+        <option value="Rock">Rock</option>
+        <option value="Pop">Pop</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Classical">Classical</option>
+        <option value="Electronic">Electronic</option>
+      </select>
+
+      <label for="experience">Expirience (in years):</label>
+      <select id="experience" name="experience" required>
+        <option value="">Select a years</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="10+">10+</option>
+      </select>
+
+      <label for="bio">Short Bio:</label>
+      <textarea id="bio" name="bio" rows="4" required></textarea>
+
+      <label for="photo">Profile Photo (URL):</label>
+      <input type="text" id="photo" name="photo">
+
+      <button type="submit">SUMBIT</button>
+    </form>
+  </div>
+</body>
+</html>
