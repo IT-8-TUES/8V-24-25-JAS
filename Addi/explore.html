@@ -10,10 +10,40 @@
   <header>
     <h1>🎵 Explore Musicians</h1>
     <input type="text" id="searchInput" placeholder="Search by name or instrument...">
+    
+    <div class="filters">
+      <select id="locationFilter" multiple>
+        <option value="">All Locations</option>
+        <option value="Sofia">Sofia</option>
+        <option value="Plovdiv">Plovdiv</option>
+        <option value="Varna">Varna</option>
+        <option value="Burgas">Burgas</option>
+      </select>
+
+      <select id="styleFilter " multiple>
+        <option value="">All Styles</option>
+        <option value="Pop">Pop</option>
+        <option value="R&B">R&B</option>
+        <option value="Rock">Rock</option>
+        <option value="Blues">Blues</option>
+        <option value="Classical">Classical</option>
+        <option value="Metal">Metal</option>
+        <option value="Jazz">Jazz</option>
+      </select>
+
+      <select id="instrumentFilter" multiple>
+        <option value="Vocal">Vocal</option>
+        <option value="Piano">Piano</option>
+        <option value="Bass guitar">Bass guitar</option>
+        <option value="Drums">Drums</option>
+        <option value="Acoustic guitar">Acoustic guitar</option>
+        <option value="saxophone">saxophone</option>
+      </select>
+    </div>
   </header>
 
   <main id="musicianList">
-    <!-- Musician cards will be injected here -->
+    <!-- Musician cards will go here -->
   </main>
 
   <script src="explore.js"></script>
