@@ -1,7 +1,7 @@
 const form = document.querySelector('form');
 
 form.addEventListener('submit', function(e) {
-  e.preventDefault(); // Спира изпращането
+  e.preventDefault();
 
   const name = form.name.value.trim();
   const email = form.email.value.trim();
