@@ -19,7 +19,7 @@ body {
 .container {
   max-width: 800px;
   margin: 40px auto;
-  background-color: var(--linen);
+  background-color: var(--fawn);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(24, 23, 19, 0.1);
@@ -58,16 +58,16 @@ select:focus {
 button[type="submit"] {
   padding: 12px 24px;
   font-size: 16px;
-  background-color: var(--grey);
-  color: var(--off-white);
+  background-color: var(--chocolate);
+  color: var(--fawn);
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 1.2s;
 }
 
 button[type="submit"]:hover {
-  background-color: var(--fawn);
+  background-color: var(--pastel-pink);
   color: var(--chocolate);
 }
 
@@ -83,7 +83,7 @@ button[type="submit"]:hover {
 
 }
   nav {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--fawn);
   backdrop-filter: blur(6px);
   padding: 10px 0;
   position: sticky;
@@ -116,7 +116,7 @@ button[type="submit"]:hover {
 }
 
 .nav-links a {
-  color: var(--pastel-pink);
+  color: var(--off-white);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
