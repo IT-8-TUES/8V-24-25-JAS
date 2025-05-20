@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--chocolate);
+
 }
 
 .container {
@@ -79,4 +80,48 @@ button[type="submit"]:hover {
   button[type="submit"] {
     width: 100%;
   }
+
+}
+  nav {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color:var(--pastel-pink)
+}
+
+.logo a {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--chocolate);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--pastel-pink);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--chocolate);
 }
