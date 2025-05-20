@@ -1,67 +1,136 @@
-// Get DOM elements
-const searchInput = document.getElementById('searchInput');
-const cityFilter = document.getElementById('cityFilter');
-const styleFilter = document.getElementById('styleFilter');
-const musicianList = document.getElementById('musicianList');
-
-// Example musician data
+// Примерни музиканти (можеш да добавиш още)
 const musicians = [
-  { name: "John Doe", city: "Sofia", style: "Rock" },
-  { name: "Anna Smith", city: "Plovdiv", style: "Jazz" },
-  { name: "Lily Music", city: "Varna", style: "Classical" },
-  { name: "Max Popov", city: "Sofia", style: "Pop" },
-  { name: "Raya Jazz", city: "Burgas", style: "Jazz" },
-  { name: "Nina Star", city: "Plovdiv", style: "Pop" },
-  { name: "Kamen Beats", city: "Sofia", style: "Rock" },
-];
-
-// Utility to get selected values from multi-select
-function getSelectedValues(selectElement) {
-  return Array.from(selectElement.selectedOptions).map(option => option.value);
-}
-
-// Render list of musicians
-function displayMusicians(filtered) {
-  musicianList.innerHTML = "";
-
-  if (filtered.length === 0) {
-    musicianList.innerHTML = "<p>No musicians found.</p>";
-    return;
+    {
+      id: 1,
+      name: "Anna Ivanova",
+      city: "Sofia",
+      genres: ["Pop", "Jazz"],
+      instruments: ["Vocal", "Piano"],
+    },
+    {
+      id: 2,
+      name: "Georgi Petrov",
+      city: "Plovdiv",
+      genres: ["Rock", "Metal"],
+      instruments: ["Guitar", "Vocal"],
+    },
+    {
+      id: 3,
+      name: "Elena Georgieva",
+      city: "Varna",
+      genres: ["Classical"],
+      instruments: ["Piano"],
+    },
+    {
+      id: 4,
+      name: "Martin Dimitrov",
+      city: "Burgas",
+      genres: ["R&B", "Blues"],
+      instruments: ["Drums"],
+    },
+    {
+      id: 5,
+      name: "Viktoria Koleva",
+      city: "Sofia",
+      genres: ["Jazz", "Blues"],
+      instruments: ["Saxophone", "Vocal"],
+    }
+  ];
+  
+  // DOM елементи
+  const cityFilter = document.getElementById('cityFilter');
+  const genreFilters = document.querySelectorAll('.genre-filter input');
+  const instrumentFilters = document.querySelectorAll('.instrument-filter input');
+  const cardsContainer = document.getElementById('musicianCards');
+  
+  // Зареждане на началния изглед
+  window.addEventListener('DOMContentLoaded', () => {
+    renderMusicians(musicians);
+    addFilterListeners();
+  });
+  
+  // Добавяне на слушатели към филтрите
+  function addFilterListeners() {
+    cityFilter.addEventListener('change', filterMusicians);
+    genreFilters.forEach(cb => cb.addEventListener('change', filterMusicians));
+    instrumentFilters.forEach(cb => cb.addEventListener('change', filterMusicians));
   }
-
-  filtered.forEach(musician => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <h2>${musician.name}</h2>
-      <p><strong>City:</strong> ${musician.city}</p>
-      <p><strong>Style:</strong> ${musician.style}</p>
-    `;
-    musicianList.appendChild(card);
-  });
-}
-
-// Filter logic
-function filterMusicians() {
-  const searchTerm = searchInput.value.toLowerCase();
-  const selectedCities = getSelectedValues(cityFilter);
-  const selectedStyles = getSelectedValues(styleFilter);
-
-  const filtered = musicians.filter(musician => {
-    const matchesSearch = musician.name.toLowerCase().includes(searchTerm);
-    const matchesCity = selectedCities.length === 0 || selectedCities.includes(musician.city);
-    const matchesStyle = selectedStyles.length === 0 || selectedStyles.includes(musician.style);
-
-    return matchesSearch && matchesCity && matchesStyle;
-  });
-
-  displayMusicians(filtered);
-}
-
-// Event listeners
-searchInput.addEventListener("input", filterMusicians);
-cityFilter.addEventListener("change", filterMusicians);
-styleFilter.addEventListener("change", filterMusicians);
-
-// Initial display
-displayMusicians(musicians);
+  
+  // Извличане на избраните стойности от филтрите
+  function getSelectedFilters() {
+    const selectedCity = cityFilter.value;
+    const selectedGenres = Array.from(genreFilters)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
+  
+    const selectedInstruments = Array.from(instrumentFilters)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
+  
+    return { selectedCity, selectedGenres, selectedInstruments };
+  }
+  
+  // Филтриране на музикантите според избраните стойности
+  function filterMusicians() {
+    const { selectedCity, selectedGenres, selectedInstruments } = getSelectedFilters();
+  
+    const filtered = musicians.filter(m => {
+      const matchCity = selectedCity === '' || m.city === selectedCity;
+      const matchGenres = selectedGenres.length === 0 || selectedGenres.some(g => m.genres.includes(g));
+      const matchInstruments = selectedInstruments.length === 0 || selectedInstruments.some(i => m.instruments.includes(i));
+  
+      return matchCity && matchGenres && matchInstruments;
+    });
+  
+    renderMusicians(filtered);
+  }
+  
+  // Генериране на картите
+  function renderMusicians(data) {
+    cardsContainer.innerHTML = '';
+  
+    if (data.length === 0) {
+      cardsContainer.innerHTML = '<p>No musicians found.</p>';
+      return;
+    }
+  
+    data.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'card';
+  
+      const isFavorite = getFavorites().includes(m.id);
+  
+      card.innerHTML = `
+        <h3>${m.name}</h3>
+        <p><strong>City:</strong> ${m.city}</p>
+        <p><strong>Genres:</strong> ${m.genres.join(', ')}</p>
+        <p><strong>Instruments:</strong> ${m.instruments.join(', ')}</p>
+        <div class="favorite-btn" data-id="${m.id}" title="Add to favorites">
+          ${isFavorite ? '❤️' : '🤍'}
+        </div>
+      `;
+  
+      card.querySelector('.favorite-btn').addEventListener('click', toggleFavorite);
+      cardsContainer.appendChild(card);
+    });
+  }
+  
+  // Работа с localStorage – favorites
+  function getFavorites() {
+    return JSON.parse(localStorage.getItem('favorites')) || [];
+  }
+  
+  function toggleFavorite(event) {
+    const id = Number(event.currentTarget.getAttribute('data-id'));
+    let favorites = getFavorites();
+  
+    if (favorites.includes(id)) {
+      favorites = favorites.filter(favId => favId !== id);
+    } else {
+      favorites.push(id);
+    }
+  
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    filterMusicians(); // Пререндиране, за да се покаже иконата правилно
+  }
+  
