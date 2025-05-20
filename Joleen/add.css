@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--off-white);
+  background-color: var(--pastel-pink);
   margin: 0;
   padding: 0;
   color: var(--chocolate);
@@ -18,11 +18,11 @@ body {
 
 .container {
   max-width: 800px;
-  margin: 40px auto;
+  margin: 20px auto;
   background-color: var(--fawn);
-  padding: 30px;
+  padding: 50px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(24, 23, 19, 0.1);
+  box-shadow: 0 5см 5см rgba(24, 23, 19, 0.1);
 }
 
 form {
@@ -39,10 +39,10 @@ label {
 input[type="text"],
 textarea,
 select {
-  padding: 10px;
+  padding: 1%;
   border: 2px solid var(--fawn);
   border-radius: 8px;
-  background-color: var(--off-white);
+  background-color: var(--linen);
   font-size: 16px;
   color: var(--chocolate);
 }
@@ -83,6 +83,7 @@ button[type="submit"]:hover {
 
 }
   nav {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--fawn);
   backdrop-filter: blur(6px);
   padding: 10px 0;
@@ -116,12 +117,13 @@ button[type="submit"]:hover {
 }
 
 .nav-links a {
-  color: var(--off-white);
+  color: var(--chocolate);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: var(--chocolate);
+  color: var(--linen);
 }
+
