@@ -1,105 +1,108 @@
-/* Основни настройки */
-body {
+  body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #F6F6F6;
-    color: #181713;
+    background-color: #f5f5f5;
+    color: #333;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    align-items: center;
   }
   
-  /* Хедър */
-  header {
-    background-color: #CDBBA9;
-    padding: 2rem 1rem;
-    text-align: center;
-    border-bottom: 3px solid #B9B9B9;
-  }
-  
-  header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    color: #181713;
-  }
-  
+  /* Navbar */
   nav {
-    position: absolute;
-    top: 20px;
-    right: 40px;
+    background-color: #e5c1a6;
+    backdrop-filter: blur(6px);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
   }
   
-  nav a {
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #f8d9e0;
+  }
+  
+  .logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #6f4e37;
     text-decoration: none;
-    font-size: 1.5rem;
-    color: #181713;
   }
   
-  /* Филтри */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links a {
+    color:  #fefaf6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #6f4e37;
+  }
+  
+  /* Title */
+  .explore-title {
+    margin-top: 30px;
+    text-align: center;
+    color: #040404;
+    font-size: 2.5rem;
+  }
+  
+  /* Filters */
   .filters {
-    background-color: #F1ECE6;
-    padding: 3rem 1rem;
-    text-align: center;
-    border-bottom: 2px solid #B9B9B9;
-    margin-top: 2rem;
-  }
-  
-  .filters select,
-  .filters input[type="checkbox"] {
-    margin: 0.5rem;
-    cursor: pointer;
-  }
-  
-  .filters select {
-    padding: 0.4rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #B9B9B9;
-    border-radius: 5px;
-    background-color: #ECD6D1;
-    color: #181713;
-  }
-  
-  /* Чекбокси */
-  .genre-filter, .instrument-filter {
-    margin-top: 1rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .dropdown, .checkbox-group {
+    background-color: #f8d9e0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 10px;
+    align-items: center;
   }
   
-  .genre-filter label, .instrument-filter label {
-    background-color: #ECD6D1;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: 1px solid #B9B9B9;
-    transition: background 0.2s;
+  .checkbox-group label {
+    margin-right: 10px;
   }
   
-  .genre-filter label:hover, .instrument-filter label:hover {
-    background-color: #CDBBA9;
-  }
-  
-  /* Контейнер с карти */
+  /* Cards */
   .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 3rem 2rem;
-    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
   }
   
-  /* Карта на музикант */
   .card {
-    background-color: #FFFFFF;
-    border: 1px solid #B9B9B9;
+    background-color:  #e5c1a6;
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    padding: 1.5rem;
-    width: 260px;
-    text-align: center;
-    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
   }
   
   .card:hover {
@@ -108,22 +111,21 @@ body {
   
   .card h3 {
     margin-top: 0;
-    color: #181713;
-  }
-  
-  .card p {
-    margin: 0.3rem 0;
-    font-size: 0.95rem;
+    color: #6f4e37;
   }
   
   .favorite-btn {
-    margin-top: 1rem;
-    font-size: 1.5rem;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #f8d9e0;
+    border: none;
+    border-radius: 6px;
+    color: white;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: background-color 0.3s;
   }
   
   .favorite-btn:hover {
-    transform: scale(1.2);
+    background-color: #6f4e37;
   }
   

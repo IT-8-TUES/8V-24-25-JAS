@@ -1,48 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Explore Musicians</title>
-  <link rel="stylesheet" href="explore.css">
+  <link rel="stylesheet" href="explore.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+
+      background-image: url('it_proekt1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #CDBBA9;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 50px auto;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo"><a href="add.html">MusicianFinder</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Musicians</a></li>
+        <li><a href="add.html">Add profile</a></li>
+        <li><a href="howitworks.html">How works</a></li>
+        <li><a href="about.html">For us</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="favorites.html">❤️</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <header>
-    <h1>🎵 Explore Musicians</h1>
-    <input type="text" id="searchInput" placeholder="Search by name or instrument...">
-    
-    <div class="filters">
-      <select id="locationFilter" multiple>
-        <option value="">All Locations</option>
+    <h1>🎵 Explore Musicians 🎵</h1>
+  </header>
+
+  <main>
+    <section class="filters">
+      <select id="cityFilter">
+        <option value="">All Cities</option>
         <option value="Sofia">Sofia</option>
         <option value="Plovdiv">Plovdiv</option>
         <option value="Varna">Varna</option>
         <option value="Burgas">Burgas</option>
       </select>
 
-      <select id="styleFilter " multiple>
-        <option value="">All Styles</option>
-        <option value="Pop">Pop</option>
-        <option value="R&B">R&B</option>
-        <option value="Rock">Rock</option>
-        <option value="Blues">Blues</option>
-        <option value="Classical">Classical</option>
-        <option value="Metal">Metal</option>
-        <option value="Jazz">Jazz</option>
-      </select>
+      <div class="genre-filter">
+        <label><input type="checkbox" value="Rock" /> Rock</label>
+        <label><input type="checkbox" value="R&B" /> R&B</label>
+        <label><input type="checkbox" value="Pop" /> Pop</label>
+        <label><input type="checkbox" value="Classical" /> Classical</label>
+        <label><input type="checkbox" value="Jazz" /> Jazz</label>
+        <label><input type="checkbox" value="Blues" /> Blues</label>
+        <label><input type="checkbox" value="Metal" /> Metal</label>
+      </div>
 
-      <select id="instrumentFilter" multiple>
-        <option value="Vocal">Vocal</option>
-        <option value="Piano">Piano</option>
-        <option value="Bass guitar">Bass guitar</option>
-        <option value="Drums">Drums</option>
-        <option value="Acoustic guitar">Acoustic guitar</option>
-        <option value="saxophone">saxophone</option>
-      </select>
-    </div>
-  </header>
+      <div class="instrument-filter">
+        <label><input type="checkbox" value="Vocal" /> Vocal</label>
+        <label><input type="checkbox" value="Piano" /> Piano</label>
+        <label><input type="checkbox" value="Bass" /> Bass</label>
+        <label><input type="checkbox" value="Drums" /> Drums</label>
+        <label><input type="checkbox" value="Acoustic guitar" /> Acoustic guitar</label>
+        <label><input type="checkbox" value="Saxophone" /> Saxophone</label>
+      </div>
+    </section>
 
-  <main id="musicianList">
-    <!-- Musician cards will go here -->
+    <section id="musicianCards" class="cards-container"></section>
   </main>
 
   <script src="explore.js"></script>

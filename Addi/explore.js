@@ -1,136 +1,94 @@
-// Примерни музиканти (можеш да добавиш още)
-const musicians = [
-    {
-      id: 1,
-      name: "Anna Ivanova",
-      city: "Sofia",
-      genres: ["Pop", "Jazz"],
-      instruments: ["Vocal", "Piano"],
-    },
-    {
-      id: 2,
-      name: "Georgi Petrov",
-      city: "Plovdiv",
-      genres: ["Rock", "Metal"],
-      instruments: ["Guitar", "Vocal"],
-    },
-    {
-      id: 3,
-      name: "Elena Georgieva",
-      city: "Varna",
-      genres: ["Classical"],
-      instruments: ["Piano"],
-    },
-    {
-      id: 4,
-      name: "Martin Dimitrov",
-      city: "Burgas",
-      genres: ["R&B", "Blues"],
-      instruments: ["Drums"],
-    },
-    {
-      id: 5,
-      name: "Viktoria Koleva",
-      city: "Sofia",
-      genres: ["Jazz", "Blues"],
-      instruments: ["Saxophone", "Vocal"],
-    }
-  ];
+document.addEventListener("DOMContentLoaded", () => {
+    const cityFilter = document.getElementById("cityFilter");
+    const genreCheckboxes = document.querySelectorAll(".genre-filter input[type='checkbox']");
+    const instrumentCheckboxes = document.querySelectorAll(".instrument-filter input[type='checkbox']");
+    const cardsContainer = document.getElementById("musicianCards");
   
-  // DOM елементи
-  const cityFilter = document.getElementById('cityFilter');
-  const genreFilters = document.querySelectorAll('.genre-filter input');
-  const instrumentFilters = document.querySelectorAll('.instrument-filter input');
-  const cardsContainer = document.getElementById('musicianCards');
-  
-  // Зареждане на началния изглед
-  window.addEventListener('DOMContentLoaded', () => {
-    renderMusicians(musicians);
-    addFilterListeners();
-  });
-  
-  // Добавяне на слушатели към филтрите
-  function addFilterListeners() {
-    cityFilter.addEventListener('change', filterMusicians);
-    genreFilters.forEach(cb => cb.addEventListener('change', filterMusicians));
-    instrumentFilters.forEach(cb => cb.addEventListener('change', filterMusicians));
-  }
-  
-  // Извличане на избраните стойности от филтрите
-  function getSelectedFilters() {
-    const selectedCity = cityFilter.value;
-    const selectedGenres = Array.from(genreFilters)
-      .filter(cb => cb.checked)
-      .map(cb => cb.value);
-  
-    const selectedInstruments = Array.from(instrumentFilters)
-      .filter(cb => cb.checked)
-      .map(cb => cb.value);
-  
-    return { selectedCity, selectedGenres, selectedInstruments };
-  }
-  
-  // Филтриране на музикантите според избраните стойности
-  function filterMusicians() {
-    const { selectedCity, selectedGenres, selectedInstruments } = getSelectedFilters();
-  
-    const filtered = musicians.filter(m => {
-      const matchCity = selectedCity === '' || m.city === selectedCity;
-      const matchGenres = selectedGenres.length === 0 || selectedGenres.some(g => m.genres.includes(g));
-      const matchInstruments = selectedInstruments.length === 0 || selectedInstruments.some(i => m.instruments.includes(i));
-  
-      return matchCity && matchGenres && matchInstruments;
-    });
-  
-    renderMusicians(filtered);
-  }
-  
-  // Генериране на картите
-  function renderMusicians(data) {
-    cardsContainer.innerHTML = '';
-  
-    if (data.length === 0) {
-      cardsContainer.innerHTML = '<p>No musicians found.</p>';
-      return;
+    // Зареждане на музикантите от localStorage
+    function loadMusicians() {
+      const musicians = JSON.parse(localStorage.getItem("musicians")) || [];
+      return musicians;
     }
   
-    data.forEach(m => {
-      const card = document.createElement('div');
-      card.className = 'card';
+    // Запис в localStorage за любими
+    function toggleFavorite(musician) {
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      const index = favorites.findIndex(fav => fav.name === musician.name && fav.city === musician.city);
+      if (index >= 0) {
+        favorites.splice(index, 1);
+      } else {
+        favorites.push(musician);
+      }
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
   
-      const isFavorite = getFavorites().includes(m.id);
-  
+    // Създаване на една карта за музикант
+    function createCard(musician) {
+      const card = document.createElement("div");
+      card.className = "card";
       card.innerHTML = `
-        <h3>${m.name}</h3>
-        <p><strong>City:</strong> ${m.city}</p>
-        <p><strong>Genres:</strong> ${m.genres.join(', ')}</p>
-        <p><strong>Instruments:</strong> ${m.instruments.join(', ')}</p>
-        <div class="favorite-btn" data-id="${m.id}" title="Add to favorites">
-          ${isFavorite ? '❤️' : '🤍'}
-        </div>
+        <h3>${musician.name}</h3>
+        <p><strong>City:</strong> ${musician.city}</p>
+        <p><strong>Genre:</strong> ${musician.genre}</p>
+        <p><strong>Instrument:</strong> ${musician.instrument}</p>
+        <button class="favorite-btn">❤️ Add to Favorites</button>
       `;
   
-      card.querySelector('.favorite-btn').addEventListener('click', toggleFavorite);
-      cardsContainer.appendChild(card);
-    });
-  }
+      card.querySelector("button").addEventListener("click", () => {
+        toggleFavorite(musician);
+        alert(`${musician.name} added to favorites!`);
+      });
   
-  // Работа с localStorage – favorites
-  function getFavorites() {
-    return JSON.parse(localStorage.getItem('favorites')) || [];
-  }
-  
-  function toggleFavorite(event) {
-    const id = Number(event.currentTarget.getAttribute('data-id'));
-    let favorites = getFavorites();
-  
-    if (favorites.includes(id)) {
-      favorites = favorites.filter(favId => favId !== id);
-    } else {
-      favorites.push(id);
+      return card;
     }
   
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    filterMusicians(); // Пререндиране, за да се покаже иконата правилно
-  }
+    // Рендериране на всички карти
+    function renderMusicians() {
+      const selectedCity = cityFilter.value;
+      const selectedGenres = Array.from(genreCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
+      const selectedInstruments = Array.from(instrumentCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
+  
+      const musicians = loadMusicians();
+  
+      const filtered = musicians.filter(musician => {
+        const matchCity = !selectedCity || musician.city === selectedCity;
+        const matchGenre = selectedGenres.length === 0 || selectedGenres.includes(musician.genre);
+        const matchInstrument = selectedInstruments.length === 0 || selectedInstruments.includes(musician.instrument);
+        return matchCity && matchGenre && matchInstrument;
+      });
+  
+      cardsContainer.innerHTML = "";
+      filtered.forEach(m => {
+        const card = createCard(m);
+        cardsContainer.appendChild(card);
+      });
+    }
+  
+    // Слушатели за филтрите
+    cityFilter.addEventListener("change", renderMusicians);
+    genreCheckboxes.forEach(cb => cb.addEventListener("change", renderMusicians));
+    instrumentCheckboxes.forEach(cb => cb.addEventListener("change", renderMusicians));
+  
+    // Добавяне на 9 примерни музиканта, ако няма
+    function addExampleMusiciansIfNeeded() {
+      const existing = JSON.parse(localStorage.getItem('musicians')) || [];
+      if (existing.length === 0) {
+        const exampleMusicians = [
+          { name: "Anna Petrova", city: "Sofia", genre: "Pop", instrument: "Vocal" },
+          { name: "Ivan Ivanov", city: "Plovdiv", genre: "Rock", instrument: "Guitar" },
+          { name: "Maria Georgieva", city: "Varna", genre: "Classical", instrument: "Piano" },
+          { name: "Nikolay Stoyanov", city: "Burgas", genre: "Jazz", instrument: "Saxophone" },
+          { name: "Elena Dimitrova", city: "Sofia", genre: "R&B", instrument: "Vocal" },
+          { name: "Georgi Hristov", city: "Plovdiv", genre: "Metal", instrument: "Drums" },
+          { name: "Kristina Koleva", city: "Varna", genre: "Pop", instrument: "Bass" },
+          { name: "Todor Marinov", city: "Burgas", genre: "Blues", instrument: "Acoustic guitar" },
+          { name: "Viktoria Angelova", city: "Sofia", genre: "Jazz", instrument: "Piano" }
+        ];
+        localStorage.setItem('musicians', JSON.stringify(exampleMusicians));
+      }
+    }
+  
+    addExampleMusiciansIfNeeded();
+    renderMusicians();
+  });
   
