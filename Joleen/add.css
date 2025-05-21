@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--off-white);
+  background-color: var(--pastel-pink);
   margin: 0;
   padding: 0;
   color: var(--chocolate);
@@ -18,11 +18,11 @@ body {
 
 .container {
   max-width: 800px;
-  margin: 40px auto;
-  background-color: var(--linen);
-  padding: 30px;
+  margin: 20px auto;
+  background-color: var(--fawn);
+  padding: 50px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(24, 23, 19, 0.1);
+  box-shadow: 0 5см 5см rgba(24, 23, 19, 0.1);
 }
 
 form {
@@ -39,10 +39,10 @@ label {
 input[type="text"],
 textarea,
 select {
-  padding: 10px;
+  padding: 1%;
   border: 2px solid var(--fawn);
   border-radius: 8px;
-  background-color: var(--off-white);
+  background-color: var(--linen);
   font-size: 16px;
   color: var(--chocolate);
 }
@@ -58,16 +58,16 @@ select:focus {
 button[type="submit"] {
   padding: 12px 24px;
   font-size: 16px;
-  background-color: var(--grey);
-  color: var(--off-white);
+  background-color: var(--chocolate);
+  color: var(--fawn);
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 1.2s;
 }
 
 button[type="submit"]:hover {
-  background-color: var(--fawn);
+  background-color: var(--pastel-pink);
   color: var(--chocolate);
 }
 
@@ -83,7 +83,8 @@ button[type="submit"]:hover {
 
 }
   nav {
-  background-color: rgba(0, 0, 0, 0.6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fawn);
   backdrop-filter: blur(6px);
   padding: 10px 0;
   position: sticky;
@@ -116,12 +117,40 @@ button[type="submit"]:hover {
 }
 
 .nav-links a {
-  color: var(--pastel-pink);
+  color: var(--chocolate);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: var(--chocolate);
+  color: var(--linen);
+}
+
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.checkbox-group {
+  margin-top: 0,05см; 
+}
+
+label[for="instruments"] {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.instrument-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px 20px;
+}
+
+.instrument-section label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
 }

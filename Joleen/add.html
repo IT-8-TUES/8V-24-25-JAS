@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Add Musician</title>
-  <link rel="stylesheet" href="add.css">
+  <link rel="stylesheet" href="add.css" />
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+
+      background-image: url('it_proekt1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #CDBBA9;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 50px auto;
+    }
+  </style>
 </head>
 <body>
-   <nav>
-  <div class="nav-container">
-    <div class="logo"><a href="add.css">MusicianFinder</a></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Начало</a></li>
-      <li><a href="explore.html">Музиканти</a></li>
-      <li><a href="add.html">Добави</a></li>
-      <li><a href="howitworks.html">Как работи</a></li>
-      <li><a href="about.html">За нас</a></li>
-      <li><a href="tips.html">Съвети</a></li>
-    </ul>
-  </div>
-</nav>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo"><a href="add.html">MusicianFinder</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Musicians</a></li>
+        <li><a href="add.html">Add profile</a></li>
+        <li><a href="howitworks.html">How works</a></li>
+        <li><a href="about.html">For us</a></li>
+        <li><a href="tips.html">Tips</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="container">
     <h1>Add a Musician</h1>
     <form>
-      <label for="name">Musician Name:</label>
-      <input type="text" id="name" name="name" required>
-      <style></style>
+      <label for="name">*Musician Name:</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="email">*Email:</label>
+      <input type="text" id="email" name="email" />
+
+      <label for="phone number">*Phone number:</label>
+      <input type="text" id="phone" name="phone" />
 
       <label for="city">City:</label>
-      <input type="text" id="city" name="city" required>
+      <input type="text" id="city" name="city" />
 
       <label for="style">Music Style:</label>
-      <select id="style" name="style" required>
+      <select id="style" name="style">
         <option value="">Select a style</option>
         <option value="Rock">Rock</option>
         <option value="Pop">Pop</option>
@@ -47,9 +76,77 @@
         <option value="Funk">Funk</option>
       </select>
 
-      <label for="experience">Expirience (in years):</label>
-      <select id="experience" name="experience" required>
-        <option value="">Select a years</option>
+      <label for="instruments">Instruments Played:</label>
+      <div class="instrument-section">
+
+      <!-- String Instruments -->
+    <fieldset>
+    <legend>🎻 String Instruments</legend>
+      <label><input type="checkbox" name="instrument" value="Acoustic Guitar"> Acoustic Guitar</label>
+      <label><input type="checkbox" name="instrument" value="Banjo"> Banjo</label>
+      <label><input type="checkbox" name="instrument" value="Cello"> Cello</label>
+      <label><input type="checkbox" name="instrument" value="Double Bass"> Double Bass</label>
+      <label><input type="checkbox" name="instrument" value="Electric Guitar"> Electric Guitar</label>
+      <label><input type="checkbox" name="instrument" value="Guitar"> Guitar</label>
+      <label><input type="checkbox" name="instrument" value="Harp"> Harp</label>
+      <label><input type="checkbox" name="instrument" value="Mandolin"> Mandolin</label>
+      <label><input type="checkbox" name="instrument" value="Ukulele"> Ukulele</label>
+      <label><input type="checkbox" name="instrument" value="Viola"> Viola</label>
+      <label><input type="checkbox" name="instrument" value="Violin"> Violin</label>
+      <label><input type="checkbox" name="instrument" value="Zither"> Zither</label>
+    </fieldset>
+
+    <!-- Wind Instruments -->
+    <fieldset>
+    <legend>🎷 Wind Instruments</legend>
+      <label><input type="checkbox" name="instrument" value="Accordion"> Accordion</label>
+      <label><input type="checkbox" name="instrument" value="Clarinet"> Clarinet</label>
+      <label><input type="checkbox" name="instrument" value="Erhu"> Erhu</label>
+      <label><input type="checkbox" name="instrument" value="Flute"> Flute</label>
+      <label><input type="checkbox" name="instrument" value="French Horn"> French Horn</label>
+      <label><input type="checkbox" name="instrument" value="Harmonica"> Harmonica</label>
+      <label><input type="checkbox" name="instrument" value="Oboe"> Oboe</label>
+      <label><input type="checkbox" name="instrument" value="Recorder"> Recorder</label>
+      <label><input type="checkbox" name="instrument" value="Saxophone"> Saxophone</label>
+      <label><input type="checkbox" name="instrument" value="Trombone"> Trombone</label>
+      <label><input type="checkbox" name="instrument" value="Trumpet"> Trumpet</label>
+      <label><input type="checkbox" name="instrument" value="Xiao"> Xiao</label>
+      <label><input type="checkbox" name="instrument" value="Zurna"> Zurna</label>
+    </fieldset>
+
+  <!-- Percussion Instruments -->
+  <fieldset>
+      <legend>🥁 Percussion Instruments</legend>
+      <label><input type="checkbox" name="instrument" value="Drums"> Drums</label>
+      <label><input type="checkbox" name="instrument" value="Glockenspiel"> Glockenspiel</label>
+      <label><input type="checkbox" name="instrument" value="Kalimba"> Kalimba</label>
+      <label><input type="checkbox" name="instrument" value="Marimba"> Marimba</label>
+      <label><input type="checkbox" name="instrument" value="Percussion"> Percussion</label>
+      <label><input type="checkbox" name="instrument" value="Udu"> Udu</label>
+      <label><input type="checkbox" name="instrument" value="Vibraphone"> Vibraphone</label>
+      <label><input type="checkbox" name="instrument" value="Xylophone"> Xylophone</label>
+  </fieldset>
+
+  <!-- Keyboard & Electronic -->
+  <fieldset>
+      <legend>🎹 Keyboard & Electronic</legend>
+      <label><input type="checkbox" name="instrument" value="Keyboard"> Keyboard</label>
+      <label><input type="checkbox" name="instrument" value="Organ"> Organ</label>
+      <label><input type="checkbox" name="instrument" value="Piano"> Piano</label>
+      <label><input type="checkbox" name="instrument" value="Rhodes"> Rhodes</label>
+      <label><input type="checkbox" name="instrument" value="Synthesizer"> Synthesizer</label>
+  </fieldset>
+
+  <!-- Voice & Other -->
+  <fieldset>
+      <legend>🎤 Voice & Other</legend>
+      <label><input type="checkbox" name="instrument" value="Vocals"> Vocals</label>
+  </fieldset>
+</div>
+
+      <label for="experience">Experience (in years):</label>
+      <select id="experience" name="experience">
+        <option value="">Select years</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -64,13 +161,14 @@
       </select>
 
       <label for="bio">Short Bio:</label>
-      <textarea id="bio" name="bio" rows="4" required></textarea>
+      <textarea id="bio" name="bio" rows="4"></textarea>
 
       <label for="photo">Profile Photo (URL):</label>
-      <input type="text" id="photo" name="photo">
+      <input type="text" id="photo" name="photo" />
 
       <button type="submit">SUBMIT</button>
     </form>
   </div>
+<script src="add.js"></script>
 </body>
 </html>
