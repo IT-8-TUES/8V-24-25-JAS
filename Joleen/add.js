@@ -5,7 +5,8 @@ form.addEventListener('submit', function(e) {
 
   const name = form.name.value.trim();
   const email = form.email.value.trim();
-  const phone = form["phone number"].value.trim();
+  const phone = form.phone.value.trim();
+
 
   if (!name || !email || !phone) {
     alert('Please fill in the required fields');
@@ -22,3 +23,6 @@ form.addEventListener('submit', function(e) {
 
   form.reset();
 });
+
+
+
