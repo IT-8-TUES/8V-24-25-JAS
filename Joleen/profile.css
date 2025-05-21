@@ -1,0 +1,143 @@
+:root {
+  --grey: #B9b9B9;
+  --chocolate: #181713;
+  --fawn: #CDBBA9;
+  --pastel-pink: #ECD6D1;
+  --linen: #F1ECE6;
+  --off-white: #F6F6F6;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-card {
+  margin-top: 30px;
+}
+
+
+.profile-card {
+  background-color: var(--fawn);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  width: 95%;
+  max-width: 900px;
+  border: 1px solid var(--fawn);
+}
+
+.profile-image img {
+  width: 320px;
+  height: 100%;
+  object-fit: cover;
+  border-right: 1px solid var(--fawn);
+}
+
+.profile-info {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-info h1 {
+  margin-top: 0;
+  font-size: 30px;
+  color: var(--chocolate);
+  margin-bottom: 2px;
+}
+
+.profile-info h2 {
+  margin-top: 0;
+  font-size: 40px;
+  color: var(--chocolate);
+  margin-bottom: 60px;
+}
+
+.profile-info p {
+  margin: 8px 0;
+  color: var(--chocolate);
+  line-height: 1.6;
+}
+
+.bio {
+  font-style: italic;
+  color: var(--chocolate);
+  background-color: var(--pastel-pink);
+  padding: 12px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--chocolate);
+  color: var(--off-white);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 1.5s ease;
+  align-self: start;
+}
+
+.contact-btn:hover {
+  background-color: var(--pastel-pink);
+}
+ 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+  background-color: var(--fawn);
+  backdrop-filter: blur(6px);
+  padding: 10px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: var(--pastel-pink);
+}
+
+.logo a {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--chocolate);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--chocolate);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  margin-top: 100px;
+}
+
+.nav-links a:hover {
+  color: var(--linen);
+}
