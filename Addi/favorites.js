@@ -1,42 +1,64 @@
-const allMusicians = [
-    { name: "Ivan", city: "Sofia", genres: ["Rock", "Pop"] },
-    { name: "Maria", city: "Plovdiv", genres: ["Jazz"] },
-    { name: "Georgi", city: "Varna", genres: ["Classical", "Jazz"] },
-    { name: "Elena", city: "Sofia", genres: ["Pop"] }
+// Dummy data (same IDs used in explore.js)
+const musicians = [
+    {
+      id: 1,
+      name: "Lily Harmony",
+      city: "Sofia",
+      genre: "Jazz",
+      image: "images/musicians/lily.jpg"
+    },
+    {
+      id: 2,
+      name: "Victor Strings",
+      city: "Plovdiv",
+      genre: "Rock",
+      image: "images/musicians/victor.jpg"
+    },
+    {
+      id: 3,
+      name: "Maya Beats",
+      city: "Varna",
+      genre: "Electronic",
+      image: "images/musicians/maya.jpg"
+    }
   ];
   
-  const container = document.getElementById("favoritesContainer");
-  
   function loadFavorites() {
-    const favNames = JSON.parse(localStorage.getItem("favorites")) || [];
-    const favMusicians = allMusicians.filter(m => favNames.includes(m.name));
+    const favoritesContainer = document.getElementById("favorites-container");
+    const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
   
-    container.innerHTML = "";
-  
-    if (favMusicians.length === 0) {
-      container.innerHTML = "<p>No favorites yet.</p>";
+    if (favoriteIds.length === 0) {
+      favoritesContainer.innerHTML = "<p>You haven't added any favorites yet.</p>";
       return;
     }
   
-    favMusicians.forEach(m => {
+    const favoriteMusicians = musicians.filter(musician =>
+      favoriteIds.includes(musician.id)
+    );
+  
+    favoritesContainer.innerHTML = "";
+    favoriteMusicians.forEach(musician => {
       const card = document.createElement("div");
-      card.className = "card";
+      card.classList.add("card");
+  
       card.innerHTML = `
-        <h3>${m.name}</h3>
-        <p>${m.city}</p>
-        <p>${m.genres.join(", ")}</p>
-        <span class="remove-btn" onclick="removeFavorite('${m.name}')">🗑️ Remove</span>
+        <img src="${musician.image}" alt="${musician.name}">
+        <h3>${musician.name}</h3>
+        <p><strong>City:</strong> ${musician.city}</p>
+        <p><strong>Genre:</strong> ${musician.genre}</p>
+        <button class="remove-btn" onclick="removeFromFavorites(${musician.id})">Remove</button>
       `;
-      container.appendChild(card);
+  
+      favoritesContainer.appendChild(card);
     });
   }
   
-  function removeFavorite(name) {
-    let favs = JSON.parse(localStorage.getItem("favorites")) || [];
-    favs = favs.filter(n => n !== name);
-    localStorage.setItem("favorites", JSON.stringify(favs));
+  function removeFromFavorites(id) {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    favorites = favorites.filter(favId => favId !== id);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
     loadFavorites();
   }
   
-  window.onload = loadFavorites;
+  loadFavorites();
   

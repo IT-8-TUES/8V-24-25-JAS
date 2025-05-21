@@ -15,7 +15,7 @@ body {
 
 /* Navbar */
 nav {
-    background-color: #e5c1a6;
+    background-color: #cdbba9;
     backdrop-filter: blur(6px);
     padding: 10px 0;
     position: sticky;
@@ -31,13 +31,13 @@ nav {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
-    color: #f8d9e0;
+    color: #ecd6d1;
 }
 
 .logo a {
     font-size: 1.5em;
     font-weight: bold;
-    color: #6f4e37;
+    color: #181713;
     text-decoration: none;
 }
 
@@ -49,22 +49,22 @@ nav {
 }
 
 .nav-links a {
-    color:  #fefaf6;
+    color:  #f6f6f6;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #6f4e37;
+    color: #181713;
 }
 
 /* Title */
 .explore-title-box {
-    background-color: #e5c1a6;
+    background-color: #cdbba9;
     padding: 15px 30px;
     border-radius: 12px;
-    color: #6f4e37;
+    color: #181713;
     display: inline-block;
     font-size: 2.5rem;
     font-weight: bold;
@@ -81,7 +81,7 @@ nav {
     gap: 15px;
     margin: 20px 0;
     
-    background-color: #e5c1a6; /* бежов фон */
+    background-color: #cdbba9; /* бежов фон */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -93,7 +93,7 @@ nav {
 .genre-filter label, .instrument-filter label {
     background: transparent;
     border: none;
-    color: #6f4e37;
+    color: #181713;
     font-weight: 600;
     padding: 5px 10px;
     margin: 3px;
@@ -103,8 +103,8 @@ nav {
 }
 
 .genre-filter label:hover, .instrument-filter label:hover {
-    background-color: #d6b89e;
-    color: #4b3621;
+    background-color: #cdbba9;
+    color: #181713;
 }
 
 /* Cards - по 3 на ред */
@@ -121,7 +121,7 @@ nav {
 
 /* Всяка карта */
 .card {
-    background-color:  #e5c1a6;
+    background-color:  #cdbba9;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -134,13 +134,13 @@ nav {
 
 .card h3 {
     margin-top: 0;
-    color: #6f4e37;
+    color: #181713;
 }
 
 .favorite-btn {
     margin-top: 10px;
     padding: 8px 12px;
-    background-color: #f8d9e0;
+    background-color: #ecd6d1;
     border: none;
     border-radius: 6px;
     color: white;
@@ -149,7 +149,7 @@ nav {
 }
 
 .favorite-btn:hover {
-    background-color: #6f4e37;
+    background-color: #181713;
 }
 
 select, .genre-filter input, .instrument-filter input {
