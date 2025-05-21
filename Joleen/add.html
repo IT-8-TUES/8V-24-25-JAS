@@ -38,15 +38,14 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="explore.html">Musicians</a></li>
         <li><a href="add.html">Add profile</a></li>
-        <li><a href="howitworks.html">How works</a></li>
-        <li><a href="about.html">For us</a></li>
-        <li><a href="tips.html">Tips</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="favorites.html">❤️</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
-    <h1>Add a Musician</h1>
+    <h1>🎵Add a Musician🎵</h1>
     <form>
       <label for="name">*Musician Name:</label>
       <input type="text" id="name" name="name" />
@@ -58,7 +57,14 @@
       <input type="text" id="phone" name="phone" />
 
       <label for="city">City:</label>
-      <input type="text" id="city" name="city" />
+      <select id="city" name="city">
+        <option value="">Select a style</option>
+        <option value="Sofia">Sofia</option>
+        <option value="Plovdiv">Plovdiv</option>
+        <option value="Varna">Varna</option>
+        <option value="Burgas">Burgas</option>
+      </select>
+
 
       <label for="style">Music Style:</label>
       <select id="style" name="style">
@@ -67,13 +73,9 @@
         <option value="Pop">Pop</option>
         <option value="Jazz">Jazz</option>
         <option value="Classical">Classical</option>
-        <option value="Electronic">Electronic</option>
         <option value="Metal">Metal</option>
-        <option value="Country">Country</option>
-        <option value="House">House</option>
-        <option value="Flamenco">Flamenco</option>
-        <option value="Folk">Folk</option>
-        <option value="Funk">Funk</option>
+        <option value="Country">Blues</option>
+        <option value="House">R&B</option>
       </select>
 
       <label for="instruments">Instruments Played:</label>
@@ -83,58 +85,25 @@
     <fieldset>
     <legend>🎻 String Instruments</legend>
       <label><input type="checkbox" name="instrument" value="Acoustic Guitar"> Acoustic Guitar</label>
-      <label><input type="checkbox" name="instrument" value="Banjo"> Banjo</label>
-      <label><input type="checkbox" name="instrument" value="Cello"> Cello</label>
-      <label><input type="checkbox" name="instrument" value="Double Bass"> Double Bass</label>
-      <label><input type="checkbox" name="instrument" value="Electric Guitar"> Electric Guitar</label>
-      <label><input type="checkbox" name="instrument" value="Guitar"> Guitar</label>
-      <label><input type="checkbox" name="instrument" value="Harp"> Harp</label>
-      <label><input type="checkbox" name="instrument" value="Mandolin"> Mandolin</label>
-      <label><input type="checkbox" name="instrument" value="Ukulele"> Ukulele</label>
-      <label><input type="checkbox" name="instrument" value="Viola"> Viola</label>
-      <label><input type="checkbox" name="instrument" value="Violin"> Violin</label>
-      <label><input type="checkbox" name="instrument" value="Zither"> Zither</label>
+      <label><input type="checkbox" name="instrument" value="Double Bass">Bass</label>
     </fieldset>
 
     <!-- Wind Instruments -->
     <fieldset>
     <legend>🎷 Wind Instruments</legend>
-      <label><input type="checkbox" name="instrument" value="Accordion"> Accordion</label>
-      <label><input type="checkbox" name="instrument" value="Clarinet"> Clarinet</label>
-      <label><input type="checkbox" name="instrument" value="Erhu"> Erhu</label>
-      <label><input type="checkbox" name="instrument" value="Flute"> Flute</label>
-      <label><input type="checkbox" name="instrument" value="French Horn"> French Horn</label>
-      <label><input type="checkbox" name="instrument" value="Harmonica"> Harmonica</label>
-      <label><input type="checkbox" name="instrument" value="Oboe"> Oboe</label>
-      <label><input type="checkbox" name="instrument" value="Recorder"> Recorder</label>
       <label><input type="checkbox" name="instrument" value="Saxophone"> Saxophone</label>
-      <label><input type="checkbox" name="instrument" value="Trombone"> Trombone</label>
-      <label><input type="checkbox" name="instrument" value="Trumpet"> Trumpet</label>
-      <label><input type="checkbox" name="instrument" value="Xiao"> Xiao</label>
-      <label><input type="checkbox" name="instrument" value="Zurna"> Zurna</label>
     </fieldset>
 
   <!-- Percussion Instruments -->
   <fieldset>
       <legend>🥁 Percussion Instruments</legend>
       <label><input type="checkbox" name="instrument" value="Drums"> Drums</label>
-      <label><input type="checkbox" name="instrument" value="Glockenspiel"> Glockenspiel</label>
-      <label><input type="checkbox" name="instrument" value="Kalimba"> Kalimba</label>
-      <label><input type="checkbox" name="instrument" value="Marimba"> Marimba</label>
-      <label><input type="checkbox" name="instrument" value="Percussion"> Percussion</label>
-      <label><input type="checkbox" name="instrument" value="Udu"> Udu</label>
-      <label><input type="checkbox" name="instrument" value="Vibraphone"> Vibraphone</label>
-      <label><input type="checkbox" name="instrument" value="Xylophone"> Xylophone</label>
   </fieldset>
 
   <!-- Keyboard & Electronic -->
   <fieldset>
       <legend>🎹 Keyboard & Electronic</legend>
-      <label><input type="checkbox" name="instrument" value="Keyboard"> Keyboard</label>
-      <label><input type="checkbox" name="instrument" value="Organ"> Organ</label>
       <label><input type="checkbox" name="instrument" value="Piano"> Piano</label>
-      <label><input type="checkbox" name="instrument" value="Rhodes"> Rhodes</label>
-      <label><input type="checkbox" name="instrument" value="Synthesizer"> Synthesizer</label>
   </fieldset>
 
   <!-- Voice & Other -->
