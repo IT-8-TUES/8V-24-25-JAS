@@ -1,4 +1,3 @@
-/* Основен фон и шрифт */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f1ece6;
@@ -11,15 +10,15 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Навигация */
+/* Nav bar */
 nav {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #cdbba9;
   backdrop-filter: blur(6px);
   padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
 }
 
 .nav-container {
@@ -29,7 +28,7 @@ nav {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
-  color: #ecd6d1;
+  color:#ecd6d1
 }
 
 .logo a {
@@ -47,17 +46,17 @@ nav {
 }
 
 .nav-links a {
-  color:  #f6f6f6;
+  color: #181713;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #181713;
+  color: #f1ece6;
 }
 
-/* Заглавие на страницата */
+/* Zaglavie */
 .page-title {
   background-color: #cdbba9;
   color: #181713;
@@ -70,21 +69,20 @@ nav {
   user-select: none;
 }
 
-/* Контейнер за картите */
+/* Cards */
 .cards-wrapper {
   max-width: 1100px;
   margin: 0 auto 80px;
   padding: 0 20px;
 }
 
-/* Grid подредба за картите */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
 }
 
-/* Стил на всяка карта */
+/* Every card */
 .card {
   background-color:  #cdbba9;
   padding: 20px;
@@ -103,7 +101,7 @@ nav {
   color: #181713;
   user-select: text;
 }
-/* Информация */
+
 .card p {
   margin: 4px 0;
   font-weight: 600;
@@ -111,7 +109,6 @@ nav {
   user-select: text;
 }
 
-/* Съдържание в картата */
 .card-content {
   padding: 16px 20px;
   flex-grow: 1;
@@ -121,7 +118,7 @@ nav {
 }
 
 
-/* Бутон Remove - същият стил като Add but по цвят */
+/* Button remove */
 .remove-btn {
   margin-top: 16px;
   background-color: #ecd6d1;
@@ -141,7 +138,7 @@ nav {
   background-color: #181713;
 }
 
-/* Съобщение за липса на любими */
+/* No favorites */
 .no-favorites-msg {
   background-color: #cdbba9;
   padding: 30px 50px;
@@ -153,7 +150,7 @@ nav {
   user-select: none;
 }
 
-/* Бутон за Explore */
+/* button Explore */
 .btn-explore {
   display: inline-block;
   margin-top: 20px;

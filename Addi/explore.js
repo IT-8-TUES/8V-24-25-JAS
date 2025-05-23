@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const instrumentCheckboxes = document.querySelectorAll(".instrument-filter input[type='checkbox']");
   const cardsContainer = document.getElementById("musicianCards");
 
-  // Зареждане на музикантите от localStorage
+  // Zarejdane ot localStorage
   function loadMusicians() {
     const musicians = JSON.parse(localStorage.getItem("musicians")) || [];
     return musicians;
   }
 
-  // Запис в localStorage за любими
+  // Zapis v localStorage za favorites
   function toggleFavorite(musician) {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const index = favorites.findIndex(fav => fav.name === musician.name && fav.city === musician.city);
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }
 
-  // Създаване на една карта за музикант
+  // 1 card za musician
   function createCard(musician) {
     const card = document.createElement("div");
     card.className = "card";
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   }
 
-  // Рендериране на всички карти
+  // all cards rendering
   function renderMusicians() {
     const selectedCity = cityFilter.value;
     const selectedGenres = Array.from(genreCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
@@ -64,12 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Слушатели за филтрите
+  // filters
   cityFilter.addEventListener("change", renderMusicians);
   genreCheckboxes.forEach(cb => cb.addEventListener("change", renderMusicians));
   instrumentCheckboxes.forEach(cb => cb.addEventListener("change", renderMusicians));
 
-  // Добавяне на 9 примерни музиканта, ако няма
+  // 9 musicians
   function addExampleMusiciansIfNeeded() {
     const existing = JSON.parse(localStorage.getItem('musicians')) || [];
     if (existing.length === 0) {
