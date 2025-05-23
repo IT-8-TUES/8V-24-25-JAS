@@ -7,19 +7,25 @@
   --off-white: #F6F6F6;
 }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
+}
+
+.page-wrapper {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding-top: 60px;
 }
-
-.profile-card {
-  margin-top: 30px;
-}
-
 
 .profile-card {
   background-color: var(--fawn);
@@ -30,6 +36,8 @@ body {
   width: 95%;
   max-width: 900px;
   border: 1px solid var(--fawn);
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 .profile-image img {
@@ -47,29 +55,29 @@ body {
   justify-content: center;
 }
 
-.profile-info h1 {
-  margin-top: 0;
-  font-size: 30px;
+.profile-info h1,
+.profile-info h2,
+.profile-info p {
   color: var(--chocolate);
+}
+
+.profile-info h1 {
+  font-size: 30px;
   margin-bottom: 2px;
 }
 
 .profile-info h2 {
-  margin-top: 0;
   font-size: 40px;
-  color: var(--chocolate);
   margin-bottom: 60px;
 }
 
 .profile-info p {
   margin: 8px 0;
-  color: var(--chocolate);
   line-height: 1.6;
 }
 
 .bio {
   font-style: italic;
-  color: var(--chocolate);
   background-color: var(--pastel-pink);
   padding: 12px;
   border-radius: 10px;
@@ -91,7 +99,7 @@ body {
 .contact-btn:hover {
   background-color: var(--pastel-pink);
 }
- 
+
 nav {
   position: fixed;
   top: 0;
@@ -111,7 +119,6 @@ nav {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
-  color: var(--pastel-pink);
 }
 
 .logo a {
@@ -140,41 +147,91 @@ nav {
 .nav-links a:hover {
   color: var(--linen);
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
 
-.main-content {
-  flex: 1;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* цялата височина на екрана */
-}
-
-.main-content {
-  flex-grow: 1; /* заема цялото налично място */
-  /* не слагаме overflow hidden, за да може да скролва */
-}
-
+/* 👇 FOOTER 👇 */
 .site-footer {
   background-color: var(--fawn);
   color: var(--chocolate);
   padding: 30px 20px;
   text-align: center;
-  border-top: 1px solid var(--pastel-pink);
-  flex-shrink: 0; /* да не се свива */
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--chocolate); /* Оранжев акцент */
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;  /* бутоните подредени вертикално */
+  align-items: center;     /* центрира бутоните хоризонтално */
+  gap: 10px;               /* разстояние между бутоните */
+}
+
+.footer-links a {
+  display: inline-block;
+  min-width: 220px;        /* бутоните ще са поне 220px широки */
+  padding: 10px 20px;      /* вътрешно разстояние */
+  text-align: center;
+  background-color: var(--chocolate);
+  color: var(--fawn);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 5px;
+}
+.footer-links a:hover {
+  background-color: var(--pastel-pink);
+  color: var(--chocolate);
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: var(--chocolate);
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  padding: 8px 12px;
+  width: 280px;
+  max-width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  margin-top: 100px;
+
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--chocolate);
+}
+
+.newsletter-form button,
+button {
+  background-color: var(--chocolate);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  color: var(--fawn);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 40px;
+}
+
+.newsletter-form button:hover,
+button:hover {
+  background-color: var(--pastel-pink);
+  color: var(--chocolate);
 }
