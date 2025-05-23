@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Favorites - MusicianFinder</title>
+  <title>Favorite Musicians</title>
   <link rel="stylesheet" href="favorites.css" />
 </head>
 <body>
-
-  <!-- ✅ NAVBAR -->
   <nav>
     <div class="nav-container">
       <div class="logo"><a href="add.html">MusicianFinder</a></div>
@@ -21,15 +19,17 @@
     </div>
   </nav>
 
-  <!-- ✅ HEADER -->
-  <header>
-    <h1>Favorite Musicians</h1>
-  </header>
+  <h1 class="page-title">Favorite Musicians</h1>
 
-  <!-- ✅ MAIN CONTENT -->
-  <main>
-    <div id="favorites-container" class="favorites-grid"></div>
-  </main>
+  <section class="cards-wrapper">
+    <div id="favorites-container" class="cards-grid">
+      <!-- Favorite cards will be dynamically inserted here -->
+    </div>
+    <div id="no-favorites" class="no-favorites-msg" style="display:none;">
+      You haven't added any favorite musicians yet.<br />
+      <a href="explore.html" class="btn-explore">Explore Musicians</a>
+    </div>
+  </section>
 
   <script src="favorites.js"></script>
 </body>

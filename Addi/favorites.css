@@ -1,98 +1,175 @@
+/* Основен фон и шрифт */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F1ECE6; /* Linen */
-    margin: 0;
-    padding: 0;
-    color: #181713; /* Chocolate */
-  }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1ece6;
+  margin: 0;
+  padding: 0;
+  color: #181713;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-  /* Navbar */
+/* Навигация */
 nav {
-    background-color: #cdbba9;
-    backdrop-filter: blur(6px);
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
+  background-color: #cdbba9;
+  backdrop-filter: blur(6px);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-    color: #f8d9e0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo a {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #6f4e37;
-    text-decoration: none;
+  font-size: 1.7em;
+  font-weight: 700;
+  color: #6f4e37;
+  text-decoration: none;
+  user-select: none;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-    color:  #fefaf6;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+  color: #fefaf6;
+  font-weight: 600;
+  font-size: 1em;
+  text-decoration: none;
+  user-select: none;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #6f4e37;
-}  
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    padding: 30px;
-  }
-  
-  .card {
-    background-color: #F6F6F6; /* Off-white */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  
-  .card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .card h3 {
-    margin: 10px 0 5px;
-    color: #B9B9B9; /* Grey */
-  }
-  
-  .card p {
-    margin: 5px 0;
-  }
-  
-  .remove-btn {
-    background-color: #B989B9;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .remove-btn:hover {
-    background-color: #181713;
-  }
-  
+  color: #6f4e37;
+}
+
+/* Заглавие на страницата */
+.page-title {
+  background-color: #cdbba9;
+  color: #181713;
+  text-align: center;
+  padding: 40px 60px;
+  margin: 80px auto 40px;
+  width: fit-content;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  user-select: none;
+}
+
+/* Контейнер за картите */
+.cards-wrapper {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+/* Grid подредба за картите */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* Стил на всяка карта */
+.card {
+  background-color:  #cdbba9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #181713;
+  user-select: text;
+}
+/* Информация */
+.card p {
+  margin: 4px 0;
+  font-weight: 600;
+  color: #494848;
+  user-select: text;
+}
+
+/* Съдържание в картата */
+.card-content {
+  padding: 16px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Бутон Remove - същият стил като Add but по цвят */
+.remove-btn {
+  margin-top: 16px;
+  background-color: #ecd6d1;
+  border: none;
+  color: #fff;
+  padding: 12px 0;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  width: 100%;
+  user-select: none;
+}
+
+.remove-btn:hover {
+  background-color: #181713;
+}
+
+/* Съобщение за липса на любими */
+.no-favorites-msg {
+  background-color: #cdbba9;
+  padding: 30px 50px;
+  margin: 40px auto 0;
+  width: fit-content;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  user-select: none;
+}
+
+/* Бутон за Explore */
+.btn-explore {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #ecd6d1;
+  padding: 14px 32px;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover {
+  background-color: #181713;
+}
