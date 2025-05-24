@@ -13,38 +13,37 @@ body {
   margin: 0;
   padding: 0;
   color: var(--chocolate);
-
 }
 
 .container {
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 50rem;
+  margin: 1.25rem auto;
   background-color: var(--fawn);
-  padding: 50px;
-  border-radius: 12px;
-  box-shadow: 0 5см 5см rgba(24, 23, 19, 0.1);
+  padding: 3.125rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 5см 5см rgba(24, 23, 19, 0.1); /* 'см' оставено както е, тъй като не е в px */
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 label {
   font-weight: bold;
   color: var(--chocolate);
-  margin-top: -10px;
+  margin-top: -0.625rem;
 }
 
 input[type="text"],
 textarea,
 select {
   padding: 1%;
-  border: 2px solid var(--fawn);
-  border-radius: 8px;
+  border: 0.125rem solid var(--fawn);
+  border-radius: 0.5rem;
   background-color: var(--linen);
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--chocolate);
 }
 
@@ -57,12 +56,12 @@ select:focus {
 }
 
 button[type="submit"] {
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   background-color: var(--chocolate);
   color: var(--fawn);
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 1.2s;
 }
@@ -72,22 +71,22 @@ button[type="submit"]:hover {
   color: var(--chocolate);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5rem) {
   .container {
-    margin: 20px;
-    padding: 20px;
+    margin: 1.25rem;
+    padding: 1.25rem;
   }
 
   button[type="submit"] {
     width: 100%;
   }
-
 }
-  nav {
+
+nav {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--fawn);
   backdrop-filter: blur(6px);
-  padding: 10px 0;
+  padding: 0.625rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -97,10 +96,10 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1100px;
+  max-width: 68.75rem;
   margin: 0 auto;
-  padding: 0 20px;
-  color:var(--pastel-pink)
+  padding: 0 1.25rem;
+  color: var(--pastel-pink);
 }
 
 .logo a {
@@ -113,7 +112,7 @@ button[type="submit"]:hover {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
@@ -130,28 +129,30 @@ button[type="submit"]:hover {
 
 .checkbox-group label {
   display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 5px;
+  margin-right: 0.625rem;
+  margin-bottom: 0.3125rem;
 }
+
 .checkbox-group {
-  margin-top: 0,05см; 
+  margin-top: 0,05см; /* това остава същото, защото не е px */
 }
 
 label[for="instruments"] {
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 0.125rem;
   font-weight: bold;
 }
 
 .instrument-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px 20px;
+  gap: 0.625rem 1.25rem;
 }
 
 .instrument-section label {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 14px;
+  gap: 0.3125rem;
+  font-size: 0.875rem;
 }
+
