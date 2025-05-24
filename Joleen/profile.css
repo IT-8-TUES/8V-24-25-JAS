@@ -239,10 +239,11 @@ button:hover {
   border-radius: 1rem;
   margin-top: 2rem;
   box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 8rem;
 }
 
 .reviews-section h3 {
-  color: var(--chocolate);
+  color: var(--grey);
   margin-bottom: 1rem;
 }
 
@@ -259,7 +260,7 @@ button:hover {
   font-size: 1rem;
   padding: 0.8rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--grey);
+  border: 1px solid var(--fawn);
 }
 
 #review-form button {
@@ -271,7 +272,7 @@ button:hover {
 
 #review-form button:hover {
   background-color: var(--pastel-pink);
-  color: var(--chocolate);
+  color: var(--grey);
 }
 
 #reviews-list .review {
