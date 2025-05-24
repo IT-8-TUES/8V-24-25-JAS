@@ -233,19 +233,10 @@ button:hover {
   color: var(--chocolate);
 }
 
-:root {
-  --grey: #B9b9B9;
-  --chocolate: #181713;
-  --fawn: #CDBBA9;
-  --pastel-pink: #ECD6D1;
-  --linen: #F1ECE6;
-  --off-white: #F6F6F6;
-}
 
 .reviews-section {
   background-color: var(--fawn);
   padding: 1.5rem;
-  border-radius: 1rem;
   margin-top: 2rem;
   box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
   margin-bottom: 8rem;
@@ -268,7 +259,6 @@ button:hover {
 #review-form button {
   font-size: 1rem;
   padding: 0.8rem;
-  border-radius: 0.5rem;
   border: 1px solid var(--grey);
 }
 
@@ -284,8 +274,6 @@ button:hover {
   color: var(--chocolate);
 }
 
-
-
 #reviews-list {
   display: flex;
   flex-wrap: wrap;
@@ -295,7 +283,6 @@ button:hover {
 .review-item {
   background-color: var(--pastel-pink);
   border: 1px solid var(--grey);
-  border-radius: 1rem;
   padding: 1rem;
   width: 18rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
