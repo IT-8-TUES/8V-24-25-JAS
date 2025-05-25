@@ -159,3 +159,66 @@ nav {
 .btn-explore:hover {
   background-color: #181713;
 }
+.site-footer {
+  background-color: #cdbba9;
+  color: #181713;
+  padding: 1.875rem 1.25rem;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 120rem; 
+  margin-left: -60rem;
+  margin-right: -60rem;
+}
+
+.footer-container {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.footer-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #181713;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.footer-links a {
+  display: inline-flexbox;
+  align-items: center;
+  min-width: 13.75rem;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  background-color: #181713;
+  color: #cdbba9;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 0.3125rem;
+}
+
+.footer-links a:hover {
+  background-color: #ecd6d1;
+  color: #181713;
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: #181713;
+  margin-top: 1.25rem;
+}
+
+
