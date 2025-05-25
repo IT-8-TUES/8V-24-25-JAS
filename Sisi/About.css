@@ -9,6 +9,18 @@
   font-size: 1rem /* 1rem = 16px */
 }
 
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-image: url('it_proekt1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--chocolate);
+}
+
 nav {
   background-color: var(--fawn);
   backdrop-filter: blur(0.375rem);
@@ -52,18 +64,6 @@ nav {
 }
 
 
-body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-image: url('it_proekt1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--chocolate);
-}
-
 header {
   background: var(--chocolate);
   color: var(--linen);
@@ -97,10 +97,57 @@ p {
   color: var(--chocolate);
 }
 
-footer {
-  text-align: center;
-  background: var(--fawn);
+.site-footer {
+  background-color: var(--fawn);
   color: var(--chocolate);
-  padding: 1rem 0;
+  padding: 1.875rem 1.25rem;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.footer-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--chocolate);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.footer-links a {
+  display: inline-flexbox;
+  align-items: center;
+  min-width: 13.75rem;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  background-color: var(--chocolate);
+  color: var(--fawn);
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 0.3125rem;
+}
+
+.footer-links a:hover {
+  background-color: var(--pastel-pink);
+  color: var(--chocolate);
+}
+
+.footer-copy {
   font-size: 0.875rem;
+  color: var(--chocolate);
+  margin-top: 1.25rem;
 }

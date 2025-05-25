@@ -31,6 +31,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 .nav-container {
@@ -81,7 +82,7 @@ header {
 }
 
 .header-content {
-  max-width: 37.5rem; 
+  max-width: 37.5rem;; 
 }
 
 h1 {
