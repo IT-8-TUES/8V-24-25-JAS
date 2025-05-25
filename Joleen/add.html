@@ -11,31 +11,19 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-
       background-image: url('it_proekt1.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
       min-height: 100vh;
-    }
-
-    .container {
-      background-color: #CDBBA9;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 600px;
-      margin: 50px auto;
     }
   </style>
 </head>
 <body>
-
   <nav>
     <div class="nav-container">
-      <div class="logo"><a href="add.html">MusicianFinder</a></div>
+      <div class="logo"><a href="index.html">MusicianFinder</a></div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
         <li><a href="explore.html">Musicians</a></li>
         <li><a href="add.html">Add profile</a></li>
         <li><a href="about.html">About</a></li>
@@ -81,32 +69,27 @@
       <label for="instruments">Instruments Played:</label>
       <div class="instrument-section">
 
-      <!-- String Instruments -->
     <fieldset>
     <legend>🎻 String Instruments</legend>
       <label><input type="checkbox" name="instrument" value="Acoustic Guitar"> Acoustic Guitar</label>
       <label><input type="checkbox" name="instrument" value="Double Bass">Bass</label>
     </fieldset>
 
-    <!-- Wind Instruments -->
     <fieldset>
     <legend>🎷 Wind Instruments</legend>
       <label><input type="checkbox" name="instrument" value="Saxophone"> Saxophone</label>
     </fieldset>
 
-  <!-- Percussion Instruments -->
   <fieldset>
       <legend>🥁 Percussion Instruments</legend>
       <label><input type="checkbox" name="instrument" value="Drums"> Drums</label>
   </fieldset>
 
-  <!-- Keyboard & Electronic -->
   <fieldset>
       <legend>🎹 Keyboard & Electronic</legend>
       <label><input type="checkbox" name="instrument" value="Piano"> Piano</label>
   </fieldset>
 
-  <!-- Voice & Other -->
   <fieldset>
       <legend>🎤 Voice & Other</legend>
       <label><input type="checkbox" name="instrument" value="Vocals"> Vocals</label>
@@ -133,7 +116,7 @@
       <textarea id="bio" name="bio" rows="4" placeholder="Write short bio..."></textarea>
       
       <label for="photo">Profile Photo (URL):</label>
-      <input type="text" id="photo" name="photo" placeholder="Your photo link" />
+      <input type="file" id="photo" name="photo" accept="image/*" />
 
       <button type="submit">SUBMIT</button>
     </form>

@@ -87,16 +87,17 @@ body {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: var(--chocolate);
-  color: var(--off-white);
+  color: var(--pastel-pink);
   border-radius: 0.5rem;
   text-decoration: none;
   font-weight: bold;
-  transition: background 1.5s ease;
+  transition: background 0.3s ease;
   align-self: start;
 }
 
 .contact-btn:hover {
   background-color: var(--pastel-pink);
+  color: var(--chocolate);
 }
 
 nav {
@@ -276,7 +277,7 @@ button:hover {
 
 #review-form button {
   background-color: var(--chocolate);
-  color: var(--linen);
+  color: var(--pastel-pink);
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -294,9 +295,9 @@ button:hover {
 }
 .review-item {
   background-color: var(--pastel-pink);
-  border: 1px solid var(--grey);
+  border: 1px solid var(--linen);
   padding: 1rem;
   width: 18rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: --pastel-pink
   font-size: 0.9rem;
 }
