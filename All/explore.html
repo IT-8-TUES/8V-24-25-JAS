@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Musicians</title>
+  <link rel="stylesheet" href="explore.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo"><a href="add.html">MusicianFinder</a></div>
+      <ul class="nav-links">
+        <li><a href="explore.html">Musicians</a></li>
+        <li><a href="add.html">Add profile</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="favorites.html">❤️</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <h1 class="explore-title-box">🎵 Explore Musicians 🎵</h1>
+  </header>
+
+  <main>
+    <section class="filters">
+      <select id="cityFilter">
+        <option value="">All Cities</option>
+        <option value="Sofia">Sofia</option>
+        <option value="Plovdiv">Plovdiv</option>
+        <option value="Varna">Varna</option>
+        <option value="Burgas">Burgas</option>
+      </select>
+
+      <div class="genre-filter">
+        <label><input type="checkbox" value="Rock" /> Rock</label>
+        <label><input type="checkbox" value="R&B" /> R&B</label>
+        <label><input type="checkbox" value="Pop" /> Pop</label>
+        <label><input type="checkbox" value="Classical" /> Classical</label>
+        <label><input type="checkbox" value="Jazz" /> Jazz</label>
+        <label><input type="checkbox" value="Blues" /> Blues</label>
+        <label><input type="checkbox" value="Metal" /> Metal</label>
+      </div>
+
+      <div class="instrument-filter">
+        <label><input type="checkbox" value="Vocal" /> Vocal</label>
+        <label><input type="checkbox" value="Piano" /> Piano</label>
+        <label><input type="checkbox" value="Bass" /> Bass</label>
+        <label><input type="checkbox" value="Drums" /> Drums</label>
+        <label><input type="checkbox" value="Acoustic guitar" /> Acoustic guitar</label>
+        <label><input type="checkbox" value="Saxophone" /> Saxophone</label>
+      </div>
+    </section>
+
+    <section id="musicianCards" class="cards-container"></section>
+  </main>
+
+  <script src="explore.js"></script>
+</body>
+</html>

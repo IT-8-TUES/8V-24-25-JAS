@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Favorite Musicians</title>
+  <link rel="stylesheet" href="favorites.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo"><a href="add.html">MusicianFinder</a></div>
+      <ul class="nav-links">
+        <li><a href="explore.html">Musicians</a></li>
+        <li><a href="add.html">Add profile</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="favorites.html">❤️</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1 class="page-title">Favorite Musicians</h1>
+
+  <section class="cards-wrapper">
+    <div id="favorites-container" class="cards-grid">
+    </div>
+    <div id="no-favorites" class="no-favorites-msg" style="display:none;">
+      You haven't added any favorite musicians yet.<br />
+      <a href="explore.html" class="btn-explore">Explore Musicians</a>
+    </div>
+  </section>
+
+  <script src="favorites.js"></script>
+</body>
+</html>

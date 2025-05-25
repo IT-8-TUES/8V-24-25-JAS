@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+nav {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #cdbba9;
+    backdrop-filter: blur(0.375rem);
+    padding: 0.625rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 68.75rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    color: #ecd6d1;
+}
+
+.logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #181713;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color:  #181713;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f1ece6;
+}
+
+.explore-title-box {
+    background-color: #cdbba9;
+    padding: 0.9375rem 1.875rem;
+    border-radius: 0.75rem;
+    color: #181713;
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 1.875rem;
+    text-align: center;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9375rem;
+    margin: 1.25rem 0;
+
+    background-color: #cdbba9;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+    max-width: 50rem;
+    width: 90%;
+}
+
+.genre-filter label, .instrument-filter label {
+    background: transparent;
+    border: none;
+    color: #181713;
+    font-weight: 600;
+    padding: 0.3125rem 0.625rem;
+    margin: 0.1875rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.genre-filter label:hover, .instrument-filter label:hover {
+    background-color: #cdbba9;
+    color: #181713;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    max-width: 62.5rem;
+    padding: 1.875rem;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.card {
+    background-color:  #cdbba9;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-0.3125rem);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #181713;
+}
+
+.favorite-btn {
+    margin-top: 0.625rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #ecd6d1;
+    border: none;
+    border-radius: 0.375rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.favorite-btn:hover {
+    background-color: #181713;
+}
+
+select, .genre-filter input, .instrument-filter input {
+    cursor: pointer;
+}

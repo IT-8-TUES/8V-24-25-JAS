@@ -1,0 +1,216 @@
+:root {
+  --grey: #B9b9B9;
+  --off-white: #F6F6F6;
+  --chocolate: #181713;
+  --pastel-pink: #ECD6D1;
+  --fawn: #CDBBA9;
+  --linen: #F1ECE6;
+
+  font-size: 16px; /* За база: 1rem = 16px */
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--chocolate);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: var(--fawn);
+  backdrop-filter: blur(0.375rem);
+  padding: 0.625rem 0; /* 10px 0 */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 68.75rem; 
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  color: var(--pastel-pink);
+}
+
+.logo a {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--chocolate);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem; 
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--chocolate);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+
+header {
+  background-image: url('it_proekt1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6.25rem 1.25rem 8.75rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--chocolate);
+}
+
+.header-content {
+  max-width: 37.5rem;; 
+}
+
+h1 {
+  background-color:var(--off-white);
+  padding: 0.9375rem 1.875rem;
+  border-radius: 0.75rem;
+  color: var(--fawn);
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 1.875rem;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1.5s ease forwards;
+}
+
+h2 {
+  background-color:var(--linen);
+  padding: 0.9375rem 1.875rem;
+  border-radius: 0.75rem;
+  color: var(--chocolate);
+  display: flex;
+  margin-top: 1.875rem;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1.5s ease forwards;
+  font-size: 1.3em;
+  margin-bottom: 1.875rem; /* 30px */
+  opacity: 0.9;
+  animation: fadeIn 2.5s ease forwards;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem; /* 20px */
+  flex-wrap: wrap;
+  animation: fadeIn 3.5s ease forwards;
+}
+
+.btn {
+  text-decoration: none;
+  background: var(--fawn);
+  color: var(--chocolate);
+  padding: 0.9375rem 1.875rem; /* 15px 30px */
+  border-radius: 1.875rem; /* 30px */
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(205, 187, 169, 0.4); /* 5px 15px */
+}
+
+.btn:hover {
+  background: var(--grey);
+  color: var(--chocolate);
+  box-shadow: 0 0.5rem 1.25rem rgba(185, 185, 185, 0.6); /* 8px 20px */
+}
+
+.site-footer {
+  background-color: var(--fawn);
+  color: var(--chocolate);
+  padding: 1.875rem 1.25rem;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.footer-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--chocolate);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.footer-links a {
+  display: inline-flexbox;
+  align-items: center;
+  min-width: 13.75rem;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  background-color: var(--chocolate);
+  color: var(--fawn);
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 0.3125rem;
+}
+
+.footer-links a:hover {
+  background-color: var(--pastel-pink);
+  color: var(--chocolate);
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: var(--chocolate);
+  margin-top: 1.25rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-1.875rem); } /* 30px */
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 48rem) { /* 768px */
+  h1 {
+    font-size: 2.2em;
+  }
+  p {
+    font-size: 1.1em;
+  }
+  .profile-card {
+    width: 100%;
+    max-width: 20rem; /* 320px */
+  }
+}
