@@ -15,7 +15,7 @@
 body {
   margin: 0;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ;
-  background: var(--linen);
+
   color: var(--chocolate);
   text-align: center;
   min-height: 100vh;
@@ -70,7 +70,10 @@ nav {
 }
 
 header {
-  background: var(--off-white);
+  background-image: url('it_proekt1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 100px 20px 140px;
   display: flex;
   justify-content: center;
