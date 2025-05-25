@@ -53,11 +53,14 @@ nav {
 
 
 body {
-  font-family: Arial, sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: var(--off-white);
+  background-image: url('it_proekt1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--chocolate);
 }
 
@@ -94,30 +97,10 @@ p {
   color: var(--chocolate);
 }
 
-.back-button {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.back-button a {
-  font-size: 1rem;
-  text-decoration: none;
-  color: var(--linen);
-  background-color: var(--grey);
-  padding: 0.75em 1.5em;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
-}
-
-.back-button a:hover {
-  background-color: var(--pastel-pink);
-  color: var(--chocolate);
-}
-
 footer {
   text-align: center;
-  background: var(--chocolate);
-  color: var(--linen);
+  background: var(--fawn);
+  color: var(--chocolate);
   padding: 1rem 0;
   font-size: 0.875rem;
 }

@@ -123,12 +123,11 @@ p {
 }
 
 footer {
-  margin-top: auto;
-  padding: 1.875rem 1.25rem; /* 30px 20px */
-  font-size: 0.9em;
-  opacity: 0.6;
-  background-color: var(--chocolate);
-  color: var(--off-white);
+  text-align: center;
+  padding: 1rem 0; /* 30px 20px */
+  font-size: 0.875rem;
+  background: var(--fawn);
+  color: var(--chocolate);
 }
 
 /* Animations */
