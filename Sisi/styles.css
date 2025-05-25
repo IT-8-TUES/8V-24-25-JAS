@@ -98,7 +98,7 @@ h1 {
   animation: fadeIn 1.5s ease forwards;
 }
 
-p {
+h2 {
   background-color:var(--linen);
   padding: 0.9375rem 1.875rem;
   border-radius: 0.75rem;
@@ -139,12 +139,59 @@ p {
   box-shadow: 0 0.5rem 1.25rem rgba(185, 185, 185, 0.6); /* 8px 20px */
 }
 
-footer {
-  text-align: center;
-  padding: 1rem 0; /* 30px 20px */
-  font-size: 0.875rem;
-  background: var(--fawn);
+.site-footer {
+  background-color: var(--fawn);
   color: var(--chocolate);
+  padding: 1.875rem 1.25rem;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.footer-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--chocolate);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.footer-links a {
+  display: inline-flexbox;
+  align-items: center;
+  min-width: 13.75rem;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  background-color: var(--chocolate);
+  color: var(--fawn);
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 0.3125rem;
+}
+
+.footer-links a:hover {
+  background-color: var(--pastel-pink);
+  color: var(--chocolate);
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: var(--chocolate);
+  margin-top: 1.25rem;
 }
 
 /* Animations */
