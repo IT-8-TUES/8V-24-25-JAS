@@ -23,21 +23,30 @@ document.addEventListener("DOMContentLoaded", () => {
   function createCard(musician) {
     const card = document.createElement("div");
     card.className = "card";
+  
+    let nameHtml;
+    if (musician.name === "Joleen Yancheva") {
+      nameHtml = `<a href="profile.html" style="text-decoration: none; color: inherit;"><h3>${musician.name}</h3></a>`;
+    } else {
+      nameHtml = `<h3>${musician.name}</h3>`;
+    }
+  
     card.innerHTML = `
-      <h3>${musician.name}</h3>
+      ${nameHtml}
       <p><strong>City:</strong> ${musician.city}</p>
       <p><strong>Genre:</strong> ${musician.genre}</p>
       <p><strong>Instrument:</strong> ${musician.instrument}</p>
       <button class="favorite-btn">❤️ Add to Favorites</button>
     `;
-
+  
     card.querySelector("button").addEventListener("click", () => {
       toggleFavorite(musician);
       alert(`${musician.name} added to favorites!`);
     });
-
+  
     return card;
   }
+  
 
   function renderMusicians() {
     const selectedCity = cityFilter.value;
@@ -69,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const existing = JSON.parse(localStorage.getItem('musicians')) || [];
     if (existing.length === 0) {
       const exampleMusicians = [
-        {name: "Ivan Ivanov", city: "Sofia", genre: "Rock", instrument: "Vocal"},
+        {name: "Ivan Ivano", city: "Sofia", genre: "Rock", instrument: "Vocal"},
         {name: "Maria Petrova", city: "Plovdiv", genre: "Jazz", instrument: "Saxophone"},
         {name: "Georgi Georgiev", city: "Varna", genre: "Pop", instrument: "Piano"},
         {name: "Elena Dimitrova", city: "Burgas", genre: "Classical", instrument: "Piano"},
@@ -77,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {name: "Petya Petkova", city: "Plovdiv", genre: "R&B", instrument: "Vocal"},
         {name: "Dimitar Dimitrov", city: "Varna", genre: "Blues", instrument: "Bass"},
         {name: "Stoyan Stoyanov", city: "Burgas", genre: "Rock", instrument: "Acoustic guitar"},
-        {name: "Viktoria Vasileva", city: "Sofia", genre: "Pop", instrument: "Vocal"},
+        {name: "Joleen Yancheva", city: "Sofia", genre: "Jazz", instrument: "Piano"},
       ];
       localStorage.setItem("musicians", JSON.stringify(exampleMusicians));
     }
