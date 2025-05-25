@@ -179,13 +179,16 @@ nav {
 
 .footer-links {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 0.625rem;
 }
 
 .footer-links a {
-  display: inline-block;
+  display: inline-flexbox;
+  align-items: center;
   min-width: 13.75rem;
   padding: 0.625rem 1.25rem;
   text-align: center;
