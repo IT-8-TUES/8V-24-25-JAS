@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Създай нов елемент за ревю
     const reviewItem = document.createElement("div");
     reviewItem.className = "review-item";
     reviewItem.innerHTML = `
@@ -15,10 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
       <strong>Comment:</strong> ${comment.value}
     `;
 
-    // Добави го най-отпред в списъка
     reviewsList.prepend(reviewItem);
 
-    // Изчисти формата
     form.reset();
+    form.classList.remove("active"); // премахваме цвета след изпращане
   });
+
+  // 🌸 Активира pastel pink фон при избор/фокус
+  function activateForm() {
+    form.classList.add("active");
+  }
+
+  function deactivateForm() {
+    if (!rating.value && !comment.value.trim()) {
+      form.classList.remove("active");
+    }
+  }
+
+  rating.addEventListener("change", activateForm);
+  comment.addEventListener("focus", activateForm);
+  comment.addEventListener("blur", deactivateForm);
 });

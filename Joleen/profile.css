@@ -298,6 +298,12 @@ button:hover {
   border: 1px solid var(--linen);
   padding: 1rem;
   width: 18rem;
-  box-shadow: --pastel-pink
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   font-size: 0.9rem;
 }
+#review-form select:focus,
+#review-form textarea:focus {
+  background-color: var(--pastel-pink);
+  outline: none;
+}
+

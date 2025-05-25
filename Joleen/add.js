@@ -23,28 +23,5 @@ form.addEventListener('submit', function(e) {
 
   form.reset();
 });
-<input type="file" id="photo" accept="image/*" />
-<img id="preview" src="#" alt="Preview" style="display:none; max-width: 200px;"/>
-
-<script>
-  const photoInput = document.getElementById('photo');
-  const preview = document.getElementById('preview');
-
-  photoInput.addEventListener('change', function() {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-
-      reader.addEventListener('load', function() {
-        preview.setAttribute('src', this.result);
-        preview.style.display = 'block';
-      });
-
-      reader.readAsDataURL(file);
-    } else {
-      preview.style.display = 'none';
-    }
-  });
-</script>
 
 
